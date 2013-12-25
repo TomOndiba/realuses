@@ -1,3 +1,6 @@
+name: Sample Jekyll Site
+description: This is a sample Jekyll Site.
+author: Michael A. Crane
 markdown: redcarpet
 baseurl: /realuses
 exclude: ['README.md']
