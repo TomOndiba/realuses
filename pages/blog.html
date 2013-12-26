@@ -419,46 +419,7 @@ Now doesn&#8217;t that look better? If there ends up being 2 or 3 back-and-forth
 
 		<p style="font-size:13px">When all else fails <b>&#x2303;&nbsp;&#x2325;&nbsp;&#x2326;</b></p>
 {% include toTop.html %}
-
-<script language="javascript">
-function emailForm() {
-	_gaq.push(['_trackEvent', 'contact', 'email form', 'wufoo', 1]);
-	window.open("http://michaelcrane.wufoo.com/forms/z7x4a9/", null, 'height=710, width=676, toolbar=0, location=0, status=1, scrollbars=0, resizable=0');return false;
-}
-</script>
-<!-- Place this render call where appropriate -->
-<script type="text/javascript">
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
-
-<!-- Twitter API 1.1 -->
-<script type="text/javascript" charset="utf-8">
-window.twttr = (function (d,s,id) {
-	var t, js, fjs = d.getElementsByTagName(s)[0];
-	if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
-	js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
-	return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
-	}(document, "script", "twitter-wjs"));
-// Define our custom event handlers
-	twttr.ready(function(twttr) {
-		function trackSocialIntent(intent_event) {
-			if (!intent_event) { return; }
-			_gaq.push(['_trackSocial', 'twitter', intent_event.type]);
-		}
-		twttr.events.bind('click', trackSocialIntent);
-		twttr.events.bind('tweet', trackSocialIntent);
-		twttr.events.bind('retweet', trackSocialIntent);
-		twttr.events.bind('favorite', trackSocialIntent);
-		twttr.events.bind('follow', trackSocialIntent);
-	});
-})();
-</script>
-
-
+{% include emailForm.html %}
 {% include addThis.html %}
 </div>
 </div>
