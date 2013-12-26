@@ -4,3 +4,6 @@ author: Michael A. Crane
 markdown: redcarpet
 baseurl: /realuses
 exclude: ['README.md']
+copyright: Copyright (c) 2013 Michael A. Crane. All rights reserved.
+bitly: 9d1bf82ab6b8
+robots:

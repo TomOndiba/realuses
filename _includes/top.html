@@ -4,17 +4,24 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>{% if page.title %} {{ page.title }} | {% endif %} {{ site.name }}</title>
-        <meta name="description" content="{{site.description}}">
-        <meta name="author" content="{{site.author}}"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="{{site.description}}" />
+        <meta name="author" content="{{site.author}}" />
+		<meta name="robots" content="{{site.robots}}" />
+		<meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico" type="image/x-icon" />
+		
+		<meta name="copyright" content="{{site.copyright}}" />
+		<meta name="bitly-verification" content="{{site.bitly}}" />
 
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
-        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="screen" title="no title" charset="utf-8" />
-        <link rel="stylesheet" href="css/bootstrap-responsive.min.css" type="text/css" media="screen" title="no title" charset="utf-8" />
-        <link rel="stylesheet" href="css/main.css" type="text/css" media="screen" title="no title" charset="utf-8" />
-        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/bootstrap.min.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/bootstrap-responsive.min.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" type="text/css" media="screen" title="no title" charset="utf-8" />
          
-        <link rel="stylesheet" href="css/offcanvas.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/offcanvas.css" type="text/css" media="screen" title="no title" charset="utf-8" />
 
-        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+        <script src="{{ site.baseurl }}/js/vendor/modernizr-2.7.1.min.js"></script>
     </head>

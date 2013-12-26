@@ -1,0 +1,25 @@
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function(){
+	$("a[rel^='prettyPhoto']").prettyPhoto({
+		social_tools: false,
+		deeplinking: false,
+		opacity: 0.70,
+		theme: 'facebook' // theme:'dark_rounded'|light_square'|'dark_square'|'facebook'
+	});
+	$("a[rel^='wiki']").prettyPhoto({
+		social_tools: false,
+		deeplinking: false,
+		opacity: 0.70,
+		// default_width: 900,
+		theme: 'facebook' // theme:'dark_rounded'|light_square'|'dark_square'|'facebook'
+	});
+	$("a[rel^='iframe']").prettyPhoto({
+		default_width: 1500,
+		default_height: 800,
+		social_tools: false,
+		deeplinking: false,
+		opacity: 0.70,
+		theme: 'facebook' // theme:'dark_rounded'|light_square'|'dark_square'|'facebook'
+	});
+});
+</script>
