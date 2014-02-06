@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    {% include default_head.html %}
+  </head>
+  <body>
+    {% include navbar.html %}
+    <div class="container">
+      <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-12 col-sm-9">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+
+            {{ content }}
+          </div><!--/span-->
+          {% include sidebar-offcanvas.html %}
+        </div><!--/row-->
+		{% include footer_copy.html %}
+      </div><!--/.container-->
+         {% include scripts.html %}
+         {% include ga.html %}
+    </body>
+</html>
