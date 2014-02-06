@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    {% include default_head.html %}
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/slicknav.css">
+    
+  </head>
+  <body>
+    {% include navbar.html %}
+      <div class="container">
+        <div class="row row-offcanvas row-offcanvas-right">
+          <div class="col-xs-12 col-sm-9">
+            <p class="pull-right visible-xs">
+              <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+            </p>
+
+            {{ content }}
+          </div><!--/span-->
+          {% include sidebar-offcanvas.html %}
+        </div><!--/row-->
+		{% include footer_copy.html %}
+      </div><!--/.container-->
+
+<script src="{{ site.baseurl }}/js/jquery.slicknav.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#menu').slicknav();
+});
+</script>
+{% include scripts.html %}
+{% include ga.html %}
+</body>
+</html>
