@@ -4,7 +4,61 @@
     {% include default_head.html %}
     <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/slicknav.css">
-    
+    <style>
+    * {
+    margin: 0;
+    padding: 0;
+    line-height:1em;
+    }
+    a {
+      text-decoration:none;
+    }
+    ul li h3 {
+      margin-bottom: -10px;
+    }
+    h4 {
+      margin-bottom: -10px;
+    }
+    ul {
+
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+    }
+    li {
+ 
+    display: list-item;
+    text-align: -webkit-match-parent;
+    }
+    .sitemap#sitemap-service {
+    float: left;
+    margin: 0;
+
+    }
+    .sitemap, .sitemap ul {
+    list-style: none;
+    clear: left;
+    line-height:1em;
+    }
+    .sitemap#sitemap-service li {
+    float: left;
+    clear: none;
+    margin: 0;
+    }
+    .sitemap#sitemap-service li h3{
+    border:0px solid;
+    }
+    .sitemap#sitemap-service li h4{
+    border:0px solid;
+    }
+    .sitemap#sitemap-service li li {
+    float: none;
+    margin-left:-40px;
+    }
+
+    </style>
   </head>
   <body>
     {% include navbar.html %}
