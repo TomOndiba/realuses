@@ -5,88 +5,59 @@
     <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/css/slicknav.css">
     <style>
-    * {
+    body {
+        background: #FFFFFF;
+
     margin: 0;
     padding: 0;
-    line-height:1em;
     }
-    a {
-      text-decoration:none;
+    #footerSlideContainer {
+    	position: fixed;
+    	bottom:0;
+    	width: 100%;
     }
-    ul li h3 {
-      margin-bottom: -10px;
+    #footerSlideButton {
+    	background: url(sliderButton.png) top left no-repeat transparent;
+    	position: absolute;
+    	top: -55px;
+    	right: 20px;
+    	width:50px;
+    	height:50px;
+    	border: none;
+    	cursor: pointer;
     }
-    h4 {
-      margin-bottom: -10px;
+    #footerSlideContent {
+    	width: 100%;
+    	height: 0px;
+    	background: #251b15;
+    	color: #CCCCCC;
+    	font-size: 0.8em;
+    	border: none;
     }
-    ul {
-
-    -webkit-margin-before: 1em;
-    -webkit-margin-after: 1em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-    -webkit-padding-start: 40px;
-    }
-    li {
- 
-    display: list-item;
-    text-align: -webkit-match-parent;
-    }
-    .sitemap#sitemap-service {
-    float: left;
-    margin: 0;
-
-    }
-    .sitemap, .sitemap ul {
-    list-style: none;
-    clear: left;
-    line-height:1em;
-    }
-    .sitemap#sitemap-service li {
-    float: left;
-    clear: none;
-    margin: 0;
-    }
-    .sitemap#sitemap-service li h3{
-    border:0px solid;
-    }
-    .sitemap#sitemap-service li h4{
-    border:0px solid;
-    }
-    .sitemap#sitemap-service li li {
-    float: none;
-    margin-left:-40px;
-    }
-
-    * {
-    margin: 0;
-    padding: 0;
+    #footerSlideText {
+    	padding: 15px 10px 25px 25px;
     }
     #container {width: auto;}
     .headers {
         width: 530px;
         display:inline;
     }
-    .header1 {float:left;width: 679px;display:inline;border:1px solid;}
-    .header2 {float:left;display:inline;border:1px solid;}
-    .header3 {float:right;display:inline;border:1px solid;}
-    .headers ul li {}
-    #container ul {}
+    .header1 {float:left;width: 679px;display:inline;}
+    .header2 {float:left;display:inline;}
+    .header3 {float:right;display:inline;}
     .col1 { 
     width: auto;
         float:left;
         clear:both;
-        border:1px solid;
+
     }
     .col2 { 
     width: auto;
     float:left;
-    border:1px solid;
     }
     .col3 { 
     width: auto;
     float:left;
-    border:1px solid;
     }
     ul {
         -webkit-margin-before: 1em;
@@ -103,7 +74,6 @@
       width: auto; 
     }
     a {text-decoration: none;}
-    li:hover { }
     h2 {
         font-weight:bold;
         font-size: 1.3em;
@@ -117,78 +87,27 @@
         font-weight:bold;
         font-size: 1.2em;
     }
-
-
-    			#footerSlideContainer {
-    				position: fixed;
-    				bottom:0;
-    				width: 100%;
-    			}
-    			#footerSlideButton {
-			    
-    				background: top left no-repeat transparent;
-
-    				position: absolute;
-    				top: -20px;
-    				right: 10px;
-    				width:25px;
-    				height:25px;
-    				border: none;
-    				cursor: pointer;
-    			}
-    			#footerSlideContent {
-    				width: 100%;
-    				height: 0px;
-    				background: #000;
-    				color: #FFF;
-    				font-size: 0.8em;
-    				border: none;
-    				-webkit-transition: height 300ms ease-in;
-    				-moz-transition: height 300ms ease-in;
-    				-ms-transition: height 300ms ease-in;
-    				-o-transition: height 300ms ease-in;
-    				transition: height 300ms ease-in;
-    			}
-    			#footerSlideContent.open {
-    				height: 400px;
-    			}
-    			#footerSlideContent h3 {
-    				font-size: 36px;
-				
-    				margin: 10px 0 10px 0;
-    			}
-    			#footerSlideContent ul {}
-    			#footerSlideText {
-    				padding: 15px 10px 25px 25px;
-    			}
-			
     </style>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.9/jquery.transit.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    	    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.9/jquery.transit.min.js"></script>
     	    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
           <script>
-      		jQuery(function($) {
-      			var open = false;
-      			$('#footerSlideButton').click(function () {
-      				if(open === false) {
-      					if(Modernizr.csstransitions) {
-      						$('#footerSlideContent').addClass('open');
-      					} else {
-      						$('#footerSlideContent').animate({ height: '400px' });
-      					}
-      					$(this).css('backgroundPosition', 'bottom left');
-      					open = true;
-      				} else {
-      					if(Modernizr.csstransitions) {
-      						$('#footerSlideContent').removeClass('open');
-      					} else {
-      						$('#footerSlideContent').animate({ height: '0px' });
-      					}
-      					$(this).css('backgroundPosition', 'top left');
-      					open = false;
-      				}
-      			});		
-      		});
+          $(function() {
+          	var open = false;
+          	$('#footerSlideButton').click(function() {
+          		if(open === false) {
+          			$('#footerSlideContent').animate({ height: '300px' });
+          			$(this).css('backgroundPosition', 'bottom left');
+          			open = true;
+          		} else {
+          			$('#footerSlideContent').animate({ height: '0px' });
+          			$(this).css('backgroundPosition', 'top left');
+          			open = false;
+          		}
+          	});		
+          });
           </script>
     
     
@@ -216,6 +135,78 @@ $(document).ready(function(){
 });
 </script>
 {% include scripts.html %}
-{% include ga.html %}
+		<div id="footerSlideContainer">
+            <div id="footerSlideButton"><span class="fa fa-sitemap"></span></div>
+			<div id="footerSlideContent">
+        <div id="footerSlideText">
+        
+				
+    <div class="headers">
+        <ul>
+            <li><h2 class="header1">Portfolio</h2></li>
+        </ul>
+        <ul>
+            <li><h2 class="header2">Resume</h2></li>
+        </ul>
+        <ul>
+            <li><h2 class="header3">About</h2></li>
+        </ul>
+    </div>
+			<div id="container">
+
+    <div class="col1">
+    <ul><h3><a href="http://www.realuses.com/web/">Web</a></h3>
+        <li><h4><a href="http://www.realuses.com/web/#file_browsing">File Browsing</a></h4>
+            <ul>
+                <li><a href="http://www.realuses.com/web/#list_icon_views">List &amp; Icon Views</a></li>
+                <li><a href="http://www.realuses.com/web/#view_files">View Files</a></li>
+                <li><a href="http://www.realuses.com/web/#share_up">Share Up</a></li>
+            </ul>
+        </li>
+        <li><h4><a href="http://www.realuses.com/web/#admin_man">Administration Management</a></h4>
+            <ul>
+                <li><a href="http://www.realuses.com/web/#new_user">New User</a></li>
+                <li><a href="http://www.realuses.com/web/#signup_process">Signup Process</a></li>
+            </ul>
+        </li>
+        <li><h4><a href="http://www.realuses.com/web/#ark">Ark</a></h4>
+            <ul>
+                <li><a href="http://www.realuses.com/web/#ark_web">Ark Web</a></li>
+                <li><a href="http://www.realuses.com/web/#web_forms">Web Forms</a></li>
+            </ul>
+        </li> <!-- Ark -->
+        <li><h4><a href="http://www.realuses.com/web/#other_web">Other</a></h4>
+            <ul>
+                <li><a href="http://www.realuses.com/wikipedia">Wikipedia</a></li>
+                <li><a title="" href="http://www.realuses.com/social-tv">Social TV</a></li>
+                <li><a title="" href="http://www.realuses.com/user-management">User Management</a></li>
+            </ul>
+        </li><!-- Other -->
+    </ul>
+</div>
+<div class="col2">
+<ul>
+    <li><h3><a href="http://www.realuses.com/mobile/">Mobile</a></h3>
+        <ul>
+        <li><a href="http://www.realuses.com/mobile/#so_ios">SpiderOak Mobile for iOS</a></li>
+                <li><a href="http://www.realuses.com/mobile/#mobile_web">Mobile Web</a></li>
+                <li><a title="Ark Mobile App" href="http://www.realuses.com/mobile/#ark_mobile">Ark Mobile App</a></li>
+            </ul>
+    </li>
+    </ul>
+</div>
+<div class="col3">
+    <h3><a href="http://www.realuses.com/desktop/">Desktop</a></h3>
+            <ul>
+                <li><a title="" href="http://www.realuses.com/desktop/#osx_desktop">SpiderOak Mac Desktop</a></li>
+                <li><a title="" href="http://www.realuses.com/desktop/#osx_installer">SpiderOak Mac Installer</a></li>
+                <li><a title="" href="http://www.realuses.com/desktop/#osx_drive">Mac OS Removable Drive &amp; Folder icons</a></li>
+                <li><a title="" href="http://www.realuses.com/desktop/#msi">Windows MSI Installer</a></li>
+            </ul>
+</div>
+			</div>
+		</div>
+</div>
+</div>
 </body>
 </html>
